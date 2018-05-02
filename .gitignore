@@ -1,0 +1,10 @@
+build
+node_modules
+.env
+.DS_Store
+cloudform-deploy.yml
+.profilename
+.stackname
+.functions.json
+deploy-swagger.yml
+*.log
