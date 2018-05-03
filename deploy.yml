@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  Contact:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: contact.handler
+      Runtime: nodejs8.10
+      CodeUri: ./build/contact.js
+      Timeout: 3
+      MemorySize: 128
+      Role: arn:aws:iam::963067304288:role/tfe-lambda-role
+      Events:
+        RootPost:
+          Type: Api
+          Properties:
+            Path: /contact
+            Method: post
